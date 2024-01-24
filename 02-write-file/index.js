@@ -30,8 +30,9 @@ function enterText() {
       });
     }
   });
-  rl.on('SIGINT', () => {
-    console.log('\n' + 'Discontinued');
-    rl.close();
-  });
 }
+
+rl.on('SIGINT', () => {
+  console.log('\n' + 'Discontinued');
+  rl.close();
+});
