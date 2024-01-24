@@ -42,7 +42,8 @@ fs.mkdir(projectFolderPath, { recursive: true })
       })));
   })
   .then(() => {
-  return fs.mkdir(assetsFolderPath);
+  return fs.access(assetsFolderPath)
+    .catch(() => fs.mkdir(assetsFolderPath));
   })
   .then(() => {
     return fs.readdir(path.join(folderPath, 'assets'));
